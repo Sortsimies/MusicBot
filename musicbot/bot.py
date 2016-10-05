@@ -1811,6 +1811,9 @@ class MusicBot(discord.Client):
         await self.safe_send_message(channel, ":wave:")
         await self.disconnect_all_voice_clients()
         raise exceptions.TerminateSignal
+		
+	async def cmd_test(self, channel, leftover_args):
+        await self.safe_send_message(channel, leftover_args[0])
 
     async def on_message(self, message):
         await self.wait_until_ready()
